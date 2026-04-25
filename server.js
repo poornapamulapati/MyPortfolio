@@ -123,11 +123,21 @@ app.post('/send-email', async (req, res) => {
 });
 
 // Serve index.html for all other routes
-app.use((req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
-  console.log(`📁 Portfolio: http://localhost:${PORT}/index.html`);
+app.get('/resume', (req, res) => {
+  res.sendFile(path.join(__dirname, 'resume.html'));
 });
+
+// Export for Vercel serverless — also start locally if run directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
+    console.log(`📁 Portfolio: http://localhost:${PORT}/index.html`);
+  });
+}
+
+module.exports = app;
+
