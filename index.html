@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pamulapati Venkata Sai Poornananda | Portfolio</title>
+  <meta name="description" content="Portfolio of Pamulapati Venkata Sai Poornananda – Computer Science Engineering student, Android Developer, and passionate programmer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">PVSP</span>
+        <span class="logo-dot"></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+        <li><a href="#education" class="nav-link" id="nav-education">Education</a></li>
+        <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+        <li><a href="#internship" class="nav-link" id="nav-internship">Internship</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+        <li><a href="https://github.com/poornapamulapati" target="_blank" class="nav-link nav-github" id="nav-github">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align:middle;margin-right:4px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          GitHub
+        </a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+          <span class="theme-icon-dark">🌙</span>
+          <span class="theme-icon-light">☀️</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for Opportunities</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line">Pamulapati Venkata</span>
+        <span class="name-line gradient-text">Sai Poornananda</span>
+      </h1>
+      <p class="hero-title">Computer Science Engineering Student</p>
+      <p class="hero-sub"><span id="typewriter"></span><span class="tw-cursor">|</span></p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" id="hero-projects-btn">View Projects</a>
+        <a href="#contact" class="btn btn-outline" id="hero-contact-btn">Contact Me</a>
+        <a href="/resume.html" target="_blank" class="btn btn-download" id="hero-resume-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
+        </a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/poornapamulapati" target="_blank" class="social-pill" id="hero-github-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          <span>@poornapamulapati</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-num" data-count="8.74" data-decimal="2" id="stat-cgpa">8.74</span>
+          <span class="stat-label">CGPA</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="3" data-suffix="+" id="stat-projects">3+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="98.5" data-decimal="1" data-suffix="%" id="stat-ssc">98.5%</span>
+          <span class="stat-label">SSC Score</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-wheel"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar-wrap">
+          <div class="about-avatar">
+            <div class="avatar-inner">
+              <img src="profile.jpg" alt="Pamulapati Venkata Sai Poornananda" class="profile-photo" />
+            </div>
+            <div class="avatar-ring"></div>
+            <div class="avatar-ring avatar-ring-2"></div>
+            <div class="avatar-glow"></div>
+            <!-- Orbiting particles -->
+            <div class="orbit orbit-1"><span class="orbit-dot"></span></div>
+            <div class="orbit orbit-2"><span class="orbit-dot orbit-dot-2"></span></div>
+            <div class="orbit orbit-3"><span class="orbit-dot orbit-dot-3"></span></div>
+            <!-- Floating icons -->
+            <div class="float-badge float-badge-1">🤖</div>
+            <div class="float-badge float-badge-2">📱</div>
+            <div class="float-badge float-badge-3">⚡</div>
+            <div class="float-badge float-badge-4">🎓</div>
+          </div>
+          <div class="about-contact-pills">
+            <a href="tel:7989113264" class="contact-pill" id="about-phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              7989113264
+            </a>
+            <a href="mailto:pvrgroupp@gmail.com" class="contact-pill" id="about-email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              pvrgroupp@gmail.com
+            </a>
+            <div class="contact-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Nellore, Andhra Pradesh
+            </div>
+          </div>
+        </div>
+        <div class="about-text-wrap">
+          <p class="about-lead">I am a passionate Computer Science and Engineering student at <strong>Lendi Institute of Engineering and Technology</strong>, driven by a love for Android development and building impactful applications.</p>
+          <p class="about-body">I consider myself a responsible and orderly person who thrives on problem-solving and continuous learning. With hands-on experience in Android development, I have built and published real-world mobile applications. I am eagerly looking forward to my first professional work experience where I can contribute, grow, and make a difference.</p>
+          <div class="about-langs">
+            <span class="lang-chip">🌐 English</span>
+            <span class="lang-chip">🗣️ Telugu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section class="section education-section" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Academic Journey</span>
+        <h2 class="section-title">Education <span class="gradient-text">Timeline</span></h2>
+      </div>
+      <div class="edu-timeline">
+
+        <div class="edu-card" id="edu-btech">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-body">
+            <div class="edu-period">2023 – 2027</div>
+            <h3 class="edu-inst">Lendi Institute of Engineering &amp; Technology</h3>
+            <p class="edu-course">B.Tech – Computer Science &amp; Engineering</p>
+            <div class="edu-score-wrap">
+              <div class="edu-score-label">Current CGPA</div>
+              <div class="edu-score-bar-wrap">
+                <div class="edu-score-bar" data-pct="87.4" style="--pct:87.4%">
+                  <span class="edu-score-value">8.74 / 10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="edu-connector"></div>
+        </div>
+
+        <div class="edu-card" id="edu-inter">
+          <div class="edu-icon">📘</div>
+          <div class="edu-body">
+            <div class="edu-period">2021 – 2023</div>
+            <h3 class="edu-inst">Narayana Jr College</h3>
+            <p class="edu-course">Intermediate – MPC</p>
+            <div class="edu-score-wrap">
+              <div class="edu-score-label">Percentage</div>
+              <div class="edu-score-bar-wrap">
+                <div class="edu-score-bar" data-pct="93.3" style="--pct:93.3%">
+                  <span class="edu-score-value">93.3%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="edu-connector"></div>
+        </div>
+
+        <div class="edu-card" id="edu-ssc">
+          <div class="edu-icon">🏫</div>
+          <div class="edu-body">
+            <div class="edu-period">2020 – 2021</div>
+            <h3 class="edu-inst">Sri Chaitanya Techno Curriculum</h3>
+            <p class="edu-course">SSC – 10th Grade</p>
+            <div class="edu-score-wrap">
+              <div class="edu-score-label">Percentage</div>
+              <div class="edu-score-bar-wrap">
+                <div class="edu-score-bar" data-pct="98.5" style="--pct:98.5%">
+                  <span class="edu-score-value">98.5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card" id="skill-python">
+          <div class="skill-icon">🐍</div>
+          <div class="skill-info">
+            <span class="skill-name">Python Programming</span>
+            <span class="skill-tag">Core Language</span>
+          </div>
+        </div>
+
+        <div class="skill-card" id="skill-kotlin">
+          <div class="skill-icon">🟣</div>
+          <div class="skill-info">
+            <span class="skill-name">Kotlin</span>
+            <span class="skill-tag">Android Native</span>
+          </div>
+        </div>
+
+        <div class="skill-card" id="skill-java">
+          <div class="skill-icon">☕</div>
+          <div class="skill-info">
+            <span class="skill-name">Java</span>
+            <span class="skill-tag">OOP & Android</span>
+          </div>
+        </div>
+
+        <div class="skill-card" id="skill-android">
+          <div class="skill-icon">📱</div>
+          <div class="skill-info">
+            <span class="skill-name">Android Development</span>
+            <span class="skill-tag">Mobile Apps</span>
+          </div>
+        </div>
+
+        <div class="skill-card" id="skill-ds">
+          <div class="skill-icon">🧩</div>
+          <div class="skill-info">
+            <span class="skill-name">Data Structures</span>
+            <span class="skill-tag">Algorithms</span>
+          </div>
+        </div>
+
+        <div class="skill-card" id="skill-sql">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-info">
+            <span class="skill-name">SQL</span>
+            <span class="skill-tag">Relational DB</span>
+          </div>
+        </div>
+
+        <div class="skill-card" id="skill-mongodb">
+          <div class="skill-icon">🍃</div>
+          <div class="skill-info">
+            <span class="skill-name">MongoDB</span>
+            <span class="skill-tag">NoSQL Database</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card" id="proj-mindblash">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon-wrap">
+              <span class="project-icon">🎮</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-green">Play Store</span>
+              <span class="badge badge-purple">Kotlin</span>
+            </div>
+          </div>
+          <h3 class="project-title">Mind Blash</h3>
+          <p class="project-desc">An engaging Sudoku puzzle game built with Kotlin native Android development. Designed to challenge and sharpen logical thinking with multiple difficulty levels. Currently deployed on the Google Play Store.</p>
+          <ul class="project-features">
+            <li>🧩 Sudoku puzzle engine with auto-validation</li>
+            <li>📊 Score tracking &amp; difficulty levels</li>
+            <li>📱 Native Android (Kotlin)</li>
+            <li>🚀 Available on Google Play Store</li>
+          </ul>
+          <div class="project-tech">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Animation API</span>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-memoria">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon-wrap">
+              <span class="project-icon">🧠</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-blue">Memory Game</span>
+              <span class="badge badge-purple">Kotlin</span>
+            </div>
+          </div>
+          <h3 class="project-title">Memoria</h3>
+          <p class="project-desc">A visually rich memory-based card matching game application built using Kotlin native Android development. Designed to improve cognitive memory skills through engaging gameplay with animated card flips and progression systems.</p>
+          <ul class="project-features">
+            <li>🃏 Animated card flip mechanics</li>
+            <li>🏆 Progressive difficulty &amp; levels</li>
+            <li>📱 Native Android (Kotlin)</li>
+            <li>🎯 Score &amp; timer system</li>
+          </ul>
+          <div class="project-tech">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Animation API</span>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-saiprasad">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon-wrap">
+              <span class="project-icon">🍽️</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-orange">Management</span>
+              <span class="badge badge-green">Firebase</span>
+            </div>
+          </div>
+          <h3 class="project-title">Sai Prasad</h3>
+          <p class="project-desc">A full-featured canteen management application named <strong>Sai Prasad</strong>, built to streamline digital food ordering, real-time inventory tracking, and billing for educational institutions — powered by Firebase for live data sync.</p>
+          <ul class="project-features">
+            <li>🛒 Digital ordering &amp; menu system</li>
+            <li>🔥 Real-time sync with Firebase</li>
+            <li>💳 Billing, reports &amp; analytics</li>
+            <li>👥 Admin &amp; customer roles</li>
+          </ul>
+          <div class="project-tech">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Firebase</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERNSHIP SECTION ===== -->
+  <section class="section internship-section" id="internship">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Experience</span>
+        <h2 class="section-title">Internship <span class="gradient-text">Experience</span></h2>
+      </div>
+      <div class="intern-card" id="intern-google">
+        <div class="intern-logo-wrap">
+          <div class="intern-logo">
+            <span>G</span>
+          </div>
+        </div>
+        <div class="intern-body">
+          <div class="intern-header-row">
+            <div>
+              <h3 class="intern-role">Android Developer Intern</h3>
+              <p class="intern-company">Google Android Developer Program</p>
+            </div>
+            <span class="intern-badge">Completed</span>
+          </div>
+          <p class="intern-desc">Participated in the Google Android Developer internship program, gaining hands-on experience in developing native Android applications, understanding Android architecture components, and following industry-standard development practices.</p>
+          <div class="intern-highlights">
+            <div class="highlight-item">📱 Android SDK &amp; Jetpack</div>
+            <div class="highlight-item">🏗️ MVVM Architecture</div>
+            <div class="highlight-item">🔧 Kotlin Coroutines</div>
+            <div class="highlight-item">✅ Code Reviews &amp; Best Practices</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info-panel">
+          <h3 class="contact-tagline">Let's work together!</h3>
+          <p class="contact-intro">I'm open to internship opportunities, collaborative projects, and exciting new challenges. Feel free to reach out!</p>
+          <div class="contact-details">
+            <a href="tel:7989113264" class="contact-detail-item" id="contact-phone">
+              <div class="contact-detail-icon">📞</div>
+              <div>
+                <span class="detail-label">Phone</span>
+                <span class="detail-value">+91 7989113264</span>
+              </div>
+            </a>
+            <a href="mailto:pvrgroupp@gmail.com" class="contact-detail-item" id="contact-email">
+              <div class="contact-detail-icon">📧</div>
+              <div>
+                <span class="detail-label">Email</span>
+                <span class="detail-value">pvrgroupp@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-detail-item" id="contact-location">
+              <div class="contact-detail-icon">📍</div>
+              <div>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">East Street, Mahimalur, Atmakur, Nellore (Dist), Andhra Pradesh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="senderName">Your Name</label>
+            <input type="text" id="senderName" name="senderName" placeholder="Enter your name" required />
+          </div>
+          <div class="form-group">
+            <label for="senderEmail">Your Email</label>
+            <input type="email" id="senderEmail" name="senderEmail" placeholder="Enter your email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What is this about?" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width" id="sendMsgBtn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-icon">🚀</span>
+          </button>
+          <div class="form-success" id="formSuccess">
+            ✅ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">PVSP<span class="footer-dot">.</span></div>
+      <div class="footer-links">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#projects" class="footer-link">Projects</a>
+        <a href="#contact" class="footer-link">Contact</a>
+        <a href="https://github.com/poornapamulapati" target="_blank" class="footer-link footer-github">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" style="vertical-align:middle;margin-right:4px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          GitHub
+        </a>
+      </div>
+      <p class="footer-text">Pamulapati Venkata Sai Poornananda &copy; 2026. All rights reserved.</p>
+      <p class="footer-sub">Crafted with ❤️ | B.Tech CSE @ Lendi Institute</p>
+    </div>
+  </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

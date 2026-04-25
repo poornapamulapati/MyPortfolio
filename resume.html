@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Resume – Pamulapati Venkata Sai Poornananda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#f0f4f8;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:24px 16px 40px;}
+
+    /* ===== DOWNLOAD BAR ===== */
+    .dl-bar{width:100%;max-width:900px;display:flex;justify-content:flex-end;gap:12px;margin-bottom:16px;}
+    .dl-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;border:none;border-radius:10px;padding:10px 22px;font-size:0.9rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;text-decoration:none;transition:all 0.3s;}
+    .dl-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,58,237,0.5);}
+    .back-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#374151;border:1px solid #d1d5db;border-radius:10px;padding:10px 22px;font-size:0.9rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;text-decoration:none;transition:all 0.3s;}
+    .back-btn:hover{background:#f3f4f6;transform:translateY(-2px);}
+
+    /* ===== RESUME CARD ===== */
+    #resume{width:100%;max-width:900px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12);display:grid;grid-template-columns:260px 1fr;}
+
+    /* ===== LEFT SIDEBAR ===== */
+    .sidebar{background:linear-gradient(180deg,#1e1b4b 0%,#2d1b69 50%,#1e1b4b 100%);padding:36px 24px;color:#fff;display:flex;flex-direction:column;gap:28px;}
+    .s-photo{display:flex;justify-content:center;}
+    .s-photo img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid rgba(168,85,247,0.8);box-shadow:0 0 24px rgba(168,85,247,0.4);}
+    .s-section-title{font-size:0.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#a855f7;margin-bottom:12px;border-bottom:1px solid rgba(168,85,247,0.3);padding-bottom:6px;}
+    .contact-list{display:flex;flex-direction:column;gap:10px;}
+    .contact-item{display:flex;align-items:flex-start;gap:9px;font-size:0.78rem;color:#c4b5fd;line-height:1.4;}
+    .contact-item .icon{font-size:0.9rem;margin-top:1px;flex-shrink:0;}
+    .contact-item a{color:#c4b5fd;text-decoration:none;}
+    .contact-item a:hover{color:#fff;}
+    .skill-list{display:flex;flex-direction:column;gap:8px;}
+    .skill-item-wrap{display:flex;flex-direction:column;gap:4px;}
+    .skill-label{font-size:0.78rem;color:#e2e8f0;font-weight:500;}
+    .skill-bar-bg{background:rgba(255,255,255,0.1);border-radius:100px;height:5px;}
+    .skill-bar{background:linear-gradient(90deg,#7c3aed,#a855f7);height:5px;border-radius:100px;}
+    .lang-chips{display:flex;flex-direction:column;gap:8px;}
+    .lang-chip-item{display:flex;align-items:center;justify-content:space-between;}
+    .lang-name{font-size:0.8rem;color:#e2e8f0;}
+    .lang-level{font-size:0.7rem;color:#a855f7;background:rgba(168,85,247,0.15);padding:2px 8px;border-radius:100px;border:1px solid rgba(168,85,247,0.3);}
+    .sidebar-profile p{font-size:0.78rem;color:#c4b5fd;line-height:1.7;}
+
+    /* ===== RIGHT MAIN ===== */
+    .main{padding:36px 32px;display:flex;flex-direction:column;gap:24px;}
+    .main-header{border-bottom:2px solid #f3f4f6;padding-bottom:18px;}
+    .main-name{font-size:1.9rem;font-weight:800;color:#1e1b4b;letter-spacing:-0.5px;line-height:1.1;}
+    .main-title{font-size:0.95rem;color:#7c3aed;font-weight:600;margin-top:4px;letter-spacing:0.5px;}
+    .m-section{display:flex;flex-direction:column;gap:14px;}
+    .m-section-title{font-size:0.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#7c3aed;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+    .m-section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(124,58,237,0.3),transparent);}
+
+    /* Education */
+    .edu-item{display:flex;gap:14px;align-items:flex-start;}
+    .edu-dot{width:10px;height:10px;background:#7c3aed;border-radius:50%;margin-top:4px;flex-shrink:0;box-shadow:0 0 0 3px rgba(124,58,237,0.15);}
+    .edu-inst{font-size:0.88rem;font-weight:700;color:#1e293b;}
+    .edu-course{font-size:0.8rem;color:#64748b;margin-top:1px;}
+    .edu-meta{display:flex;gap:10px;margin-top:4px;align-items:center;flex-wrap:wrap;}
+    .edu-year{font-size:0.72rem;color:#94a3b8;}
+    .edu-score{font-size:0.72rem;font-weight:700;background:linear-gradient(135deg,#7c3aed,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+    /* Projects */
+    .proj-item{background:#f8faff;border:1px solid #e0e7ff;border-radius:10px;padding:14px 16px;border-left:3px solid #7c3aed;}
+    .proj-title-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;flex-wrap:wrap;gap:6px;}
+    .proj-name{font-size:0.88rem;font-weight:700;color:#1e1b4b;}
+    .proj-tags{display:flex;gap:5px;flex-wrap:wrap;}
+    .proj-tag{font-size:0.65rem;font-weight:600;padding:2px 8px;border-radius:5px;background:rgba(124,58,237,0.1);color:#7c3aed;border:1px solid rgba(124,58,237,0.2);}
+    .proj-tag.green{background:rgba(34,197,94,0.1);color:#16a34a;border-color:rgba(34,197,94,0.2);}
+    .proj-tag.blue{background:rgba(59,130,246,0.1);color:#2563eb;border-color:rgba(59,130,246,0.2);}
+    .proj-tag.orange{background:rgba(245,158,11,0.1);color:#d97706;border-color:rgba(245,158,11,0.2);}
+    .proj-desc{font-size:0.77rem;color:#64748b;line-height:1.6;}
+    .proj-tech{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap;}
+    .proj-tech span{font-size:0.68rem;background:#1e1b4b;color:#c4b5fd;padding:2px 8px;border-radius:5px;font-weight:500;}
+
+    /* Internship */
+    .intern-item{display:flex;gap:14px;align-items:flex-start;background:#f8faff;border:1px solid #e0e7ff;border-radius:10px;padding:14px 16px;}
+    .intern-logo{width:40px;height:40px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;color:#4285F4;box-shadow:0 2px 12px rgba(66,133,244,0.2);flex-shrink:0;border:1px solid #e0e7ff;}
+    .intern-role{font-size:0.88rem;font-weight:700;color:#1e1b4b;}
+    .intern-company{font-size:0.78rem;color:#7c3aed;font-weight:500;margin-top:1px;}
+    .intern-desc{font-size:0.77rem;color:#64748b;line-height:1.6;margin-top:4px;}
+
+    /* ===== PRINT – hides UI, makes resume fill A4 page ===== */
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { background: #fff !important; padding: 0 !important; margin: 0 !important; display: block !important; }
+      .dl-bar, .print-tip { display: none !important; }
+      #resume {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        height: 100vh;
+      }
+      @page { margin: 0; size: A4 portrait; }
+    }
+    /* ===== PRINT TIP TOAST ===== */
+    .print-tip {
+      display: none;
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+      background: #1e1b4b; color: #fff;
+      padding: 14px 24px; border-radius: 12px;
+      font-size: 0.88rem; font-weight: 500;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      z-index: 9999; text-align: center; line-height: 1.6;
+      border: 1px solid rgba(168,85,247,0.4);
+      animation: fadeInDown 0.4s ease;
+    }
+    .print-tip strong { color: #a855f7; }
+    @keyframes fadeInDown { from{opacity:0;transform:translateX(-50%) translateY(-10px);}to{opacity:1;transform:translateX(-50%) translateY(0);} }
+  </style>
+</head>
+<body>
+
+  <!-- Print Tip Toast -->
+  <div class="print-tip" id="printTip">
+    📄 Print dialog opened!<br/>
+    <strong>Change destination → "Save as PDF"</strong> → Click Save
+  </div>
+
+  <!-- Download Bar -->
+  <div class="dl-bar">
+    <a href="/" class="back-btn">← Back to Portfolio</a>
+    <button class="dl-btn" onclick="downloadPDF()" id="dlBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PDF
+    </button>
+  </div>
+
+  <!-- Resume Card -->
+  <div id="resume">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="s-photo">
+        <img src="profile.jpg" alt="Pamulapati Venkata Sai Poornananda" />
+      </div>
+
+      <div>
+        <div class="s-section-title">Contact</div>
+        <div class="contact-list">
+          <div class="contact-item"><span class="icon">📞</span><span>+91 7989113264</span></div>
+          <div class="contact-item"><span class="icon">✉️</span><a href="mailto:pvrgroupp@gmail.com">pvrgroupp@gmail.com</a></div>
+          <div class="contact-item"><span class="icon">📍</span><span>East Street, Mahimalur,<br/>Atmakur, Nellore (Dist),<br/>Andhra Pradesh</span></div>
+          <div class="contact-item"><span class="icon">💻</span><a href="https://github.com/poornapamulapati" target="_blank">github.com/poornapamulapati</a></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="s-section-title">Profile</div>
+        <div class="sidebar-profile">
+          <p>Computer Science Engineering student with a passion for Android development. Responsible, orderly, and eager to contribute to real-world projects. Looking forward to first professional work experience.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="s-section-title">Technical Skills</div>
+        <div class="skill-list">
+          <div class="skill-item-wrap"><div class="skill-label">Kotlin</div><div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">Android Development</div><div class="skill-bar-bg"><div class="skill-bar" style="width:88%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">Jetpack Compose</div><div class="skill-bar-bg"><div class="skill-bar" style="width:85%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">Java</div><div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">Python</div><div class="skill-bar-bg"><div class="skill-bar" style="width:75%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">Firebase</div><div class="skill-bar-bg"><div class="skill-bar" style="width:78%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">SQL</div><div class="skill-bar-bg"><div class="skill-bar" style="width:72%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">MongoDB</div><div class="skill-bar-bg"><div class="skill-bar" style="width:65%"></div></div></div>
+          <div class="skill-item-wrap"><div class="skill-label">Data Structures</div><div class="skill-bar-bg"><div class="skill-bar" style="width:82%"></div></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="s-section-title">Languages</div>
+        <div class="lang-chips">
+          <div class="lang-chip-item"><span class="lang-name">English</span><span class="lang-level">Fluent</span></div>
+          <div class="lang-chip-item"><span class="lang-name">Telugu</span><span class="lang-level">Native</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN -->
+    <main class="main">
+      <div class="main-header">
+        <div class="main-name">Pamulapati Venkata<br/>Sai Poornananda</div>
+        <div class="main-title">Computer Science Engineering Student &nbsp;|&nbsp; Android Developer</div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="m-section">
+        <div class="m-section-title">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div>
+            <div class="edu-inst">Lendi Institute of Engineering &amp; Technology</div>
+            <div class="edu-course">B.Tech – Computer Science &amp; Engineering</div>
+            <div class="edu-meta">
+              <span class="edu-year">2023 – 2027</span>
+              <span class="edu-score">CGPA: 8.74 / 10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div>
+            <div class="edu-inst">Narayana Jr College</div>
+            <div class="edu-course">Intermediate – MPC (Maths, Physics, Chemistry)</div>
+            <div class="edu-meta">
+              <span class="edu-year">2021 – 2023</span>
+              <span class="edu-score">93.3%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div>
+            <div class="edu-inst">Sri Chaitanya Techno Curriculum</div>
+            <div class="edu-course">SSC – 10th Grade</div>
+            <div class="edu-meta">
+              <span class="edu-year">2020 – 2021</span>
+              <span class="edu-score">98.5%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERNSHIP -->
+      <div class="m-section">
+        <div class="m-section-title">Internship</div>
+        <div class="intern-item">
+          <div class="intern-logo">G</div>
+          <div>
+            <div class="intern-role">Android Developer Intern</div>
+            <div class="intern-company">Google Android Developer Program</div>
+            <div class="intern-desc">Gained hands-on experience in developing native Android applications, Android architecture components (MVVM), Kotlin Coroutines, and industry-standard best practices.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="m-section">
+        <div class="m-section-title">Projects</div>
+
+        <div class="proj-item">
+          <div class="proj-title-row">
+            <div class="proj-name">🎮 Mind Blash</div>
+            <div class="proj-tags">
+              <span class="proj-tag green">Play Store</span>
+              <span class="proj-tag">Kotlin</span>
+              <span class="proj-tag">Jetpack Compose</span>
+            </div>
+          </div>
+          <div class="proj-desc">An engaging Sudoku puzzle game with auto-validation, score tracking, and multiple difficulty levels. Deployed on the Google Play Store. Built using Kotlin native Android development with smooth Animation API transitions.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-title-row">
+            <div class="proj-name">🧠 Memoria</div>
+            <div class="proj-tags">
+              <span class="proj-tag blue">Memory Game</span>
+              <span class="proj-tag">Kotlin</span>
+              <span class="proj-tag">Jetpack Compose</span>
+            </div>
+          </div>
+          <div class="proj-desc">A memory-based card matching game with animated card flips, progressive difficulty levels, and a timer/score system. Built using Kotlin with Jetpack Compose and Animation API.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-title-row">
+            <div class="proj-name">🍽️ Sai Prasad</div>
+            <div class="proj-tags">
+              <span class="proj-tag orange">Management App</span>
+              <span class="proj-tag">Kotlin</span>
+              <span class="proj-tag">Firebase</span>
+            </div>
+          </div>
+          <div class="proj-desc">A full-featured canteen management application for educational institutions with real-time order tracking via Firebase, digital menu, billing system, and admin/customer role management. Built with Kotlin &amp; Jetpack Compose.</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const btn = document.getElementById('dlBtn');
+      const tip = document.getElementById('printTip');
+
+      // Show tip toast
+      tip.style.display = 'block';
+
+      // Update button
+      btn.innerHTML = '🖨️ Opening print dialog...';
+      btn.disabled = true;
+
+      // Short delay so browser renders the toast before print dialog
+      setTimeout(() => {
+        window.print();
+
+        // After print dialog closes, reset button
+        setTimeout(() => {
+          btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF`;
+          btn.disabled = false;
+          tip.style.display = 'none';
+        }, 2000);
+      }, 300);
+    }
+  </script>
+</body>
+</html>
